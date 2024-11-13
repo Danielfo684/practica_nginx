@@ -148,10 +148,8 @@ sudo cp /vagrant/vsftpd.conf /etc/vsftpd.conf
 ```
 - Reemplaza la configuración existente de `vsftpd` con el archivo de configuración personalizado.
 
-## Cuestiones Finales
+1. ¿Qué pasa si no hago el enlace simbólico entre sites-available y sites-enabled de mi sitio web?
+Si no haces el enlace simbólico, Nginx no va a saber que has configurado un sitio, y no va a mostrar nada cuando entres al dominio que pusiste (por ejemplo, www.daninginx.test). Esto pasa porque Nginx solo lee los sitios que están en la carpeta sites-enabled, y si no haces el enlace, tu configuración en sites-available no va a contar. Es como poner un archivo en una carpeta pero no decirle a Nginx que lo lea.
 
-### ¿Qué pasa si no hago el link simbólico entre `sites-available` y `sites-enabled` de mi sitio web?
-Si no se crea el enlace simbólico, Nginx no cargará la configuración de tu sitio web y no estará disponible al acceder a la dirección del servidor. `sites-enabled` es el directorio que Nginx usa para activar los sitios.
-
-### ¿Qué pasa si no le doy los permisos adecuados a `/var/www/nombre_web`?
-Si los permisos no son correctos, Nginx puede no tener acceso a los archivos del sitio web, lo que resultará en errores de acceso denegado o páginas que no se cargan correctamente. Esto podría afectar la capacidad del servidor para servir los archivos del sitio a los usuarios.
+2. ¿Qué pasa si no le doy los permisos adecuados a /var/www/nombre_web?
+Si no le das los permisos correctos, Nginx no va a poder acceder a los archivos de tu sitio y, cuando intentes abrirlo, te dará un error, como "Acceso Denegado" (403). Esto pasa porque Nginx necesita permisos para leer los archivos del sitio y mostrarlo en el navegador. Si no configuras bien esos permisos, el sitio no va a funcionar. Es como tener una puerta cerrada con llave y no darle la llave a Nginx para que entre.
