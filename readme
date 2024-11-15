@@ -157,9 +157,7 @@ sudo cp /vagrant/vsftpd.conf /etc/vsftpd.conf
 ## Cuestiones Finales
 
 ### ¿Qué pasa si no hago el link simbólico entre `sites-available` y `sites-enabled` de mi sitio web?
-Si no se crea el enlace simbólico, Nginx no cargará la configuración de tu sitio web y no estará disponible al acceder a la dirección del servidor. `sites-enabled` es el directorio que Nginx usa para activar los sitios.
+Si no se crea el enlace simbólico, Nginx no cargará la configuración de tu sitio web y no estará disponible al acceder a la dirección del servidor. `sites-enabled` es el directorio que Nginx usa para activar los sitios, por lo que es esencial para que funcione y no de error.
 
 ### ¿Qué pasa si no le doy los permisos adecuados a `/var/www/nombre_web`?
-Si los permisos no son correctos, Nginx puede no tener acceso a los archivos del sitio web, lo que resultará en errores de acceso denegado o páginas que no se cargan correctamente. Esto podría afectar la capacidad del servidor para servir los archivos del sitio a los usuarios.
-- Asigna la propiedad y los permisos adecuados al directorio /var/www/ para asegurar el acceso correcto del usuario www-data.
-
+Si los permisos no son correctos, Nginx pierde el acceso a archivos del sitio web, dando errores de acceso denegado o páginas que no se cargan correctamente. Esto podría afectar la capacidad del servidor para servir los archivos del sitio a los usuarios.

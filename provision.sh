@@ -21,11 +21,6 @@ sudo ln -s /etc/nginx/sites-available/daninginx /etc/nginx/sites-enabled/
 
 
 #instalacion del segundo sitio web
-
-
-
-
-
 #permisos  y usuario FTP
 
 sudo adduser dani
