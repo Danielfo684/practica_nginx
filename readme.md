@@ -82,7 +82,7 @@ Este paso es fundamental para que funcione: debe modificarse el archivo añadien
 
 ### Verificación del sitio web
 ![Captura de Filezilla](./images/nginx.png)
-![Funcionamiento de nginx con el repositorio del profesor](./images/daninginx.test-working.png.jpg)
+![Funcionamiento de nginx con el repositorio del profesor](./images/daninginx.test-working.png.png)
 
 ### Crear un Segundo Directorio de Sitio Web y asignarle permisos
 ```bash
