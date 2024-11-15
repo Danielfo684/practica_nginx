@@ -1,7 +1,3 @@
-IMPORTANTE: La mayor parte de los commits para este proyecto se realizaron en el siguiente repositorio donde se encuentran la mayoría de proyectos del ciclo formativo,
-ya que no realicé este proyecto en un repositorio independiente hasta más tarde. El repositorio en cuestión es https://github.com/Danielfo684/WEB2
-
-
 # Guía del Script de Provisión
 
 IMPORTANTE: La mayor parte de los commits para este proyecto se realizaron en el siguiente repositorio donde se encuentran la mayoría de proyectos del ciclo formativo, ya que no realicé este proyecto en un repositorio independiente hasta más tarde. El repositorio en cuestión es [WEB2](https://github.com/Danielfo684/WEB2).
