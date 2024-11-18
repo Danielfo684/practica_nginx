@@ -6,5 +6,6 @@ Vagrant.configure("2") do |config|
 
     #provisión
     nginx.vm.provision "shell", path: "provision.sh"
+    nginx.vm.provision "shell", path: "provision12.sh"
   end
 end
