@@ -1,10 +1,7 @@
-sudo apt update -y
-sudo apt install -y nginx git vsftpd
-sudo apt-get upgrade -y
+apt update
+apt install -y nginx git vsftpd openssl
 
-sudo  systemctl enable nginx  
-sudo  systemctl start nginx    
-
+sudo systemctl status nginx
 
 #sitio web inicial
 sudo  mkdir -p /var/www/daninginx/html
@@ -34,7 +31,7 @@ sudo chmod 775 /home/dani/ftp
 
 
 #claves para el certificado
-sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/ssl/private/vsftpd.key -out /etc/ssl/certs/vsftpd.crt -subj "/C=ES/ST=Granada/L=Granada/O=Global Security/OU=IES ZAIDIN VERGELES/CN=exploreX.test"
+sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/ssl/private/vsftpd.key -out /etc/ssl/certs/vsftpd.crt -subj "/C=ES/ST=Granada/L=Granada/O=Global Security/OU=IES ZAIDIN VERGELES/CN=dj.test"
 
 sudo cp -v /vagrant/vsftpd.conf /etc/vsftpd.conf
 
@@ -45,10 +42,14 @@ sudo usermod -aG www-data dani
 #carpeta para FileZilla
 sudo mkdir -p  /var/www/danijugger/html
 
-cp /vagrant/danijugger /etc/nginx/sites-available/danijugger
+sudo cp /vagrant/danijugger /etc/nginx/sites-available/
 
 sudo ln -s /etc/nginx/sites-available/danijugger /etc/nginx/sites-enabled/
+
+sudo nginx -t
+
 sudo systemctl restart nginx
+sudo systemctl status nginx
 sudo systemctl restart vsftpd
 
 
