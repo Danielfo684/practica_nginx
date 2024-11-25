@@ -1,0 +1,11 @@
+server {
+  listen 80;
+  root /var/www/deaw/html;
+  index index.html index.htm;
+  server_name www.danisimple.test;
+  
+location /contact.html {
+  auth_basic "Área restringida";
+  auth_basic_user_file /etc/nginx/.htpasswd;
+}
+}

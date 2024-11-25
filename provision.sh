@@ -1,5 +1,5 @@
 apt update
-apt install -y nginx git vsftpd
+apt install -y nginx git vsftpd openssl ufw
 
 sudo systemctl status nginx
 

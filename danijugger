@@ -1,11 +1,15 @@
 server {
-    listen 80;
-    listen [::]:80;
-    root /var/www/danijugger/html;
-    index index.html index.htm index.nginx-debian.html;
-    server_name www.danijugger.test;
+  listen 80;
+  root /var/www/danijugger/html;
+  index index.html index.htm;
+  server_name www.danijugger.test;
+  
+location / {
+  # ...
 
-    location / {
-        try_files $uri $uri/ =404;
-    }
+  allow 192.168.10.1;
+  deny all;
+  auth_basic "Administrator's Area";
+  auth_basic_user_file /etc/nginx/.htpasswd;
+}
 }
