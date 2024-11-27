@@ -7,7 +7,7 @@ server {
 location / {
   # ...
 
-  allow 192.168.10.1;
+  allow 192.168.56.1;
   deny all;
   auth_basic "Administrator's Area";
   auth_basic_user_file /etc/nginx/.htpasswd;

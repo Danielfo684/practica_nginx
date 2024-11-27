@@ -1,6 +1,6 @@
-sudo mkdir -p  /var/www/acceso-seguro.com/html
+sudo mkdir -p  /var/www/acceso-seguro/html
 
-sudo cp /vagrant/acceso-seguro.com /etc/nginx/sites-available/
+sudo cp /vagrant/acceso-seguro /etc/nginx/sites-available/
 
 sudo ln -s /etc/nginx/sites-available/acceso-seguro /etc/nginx/sites-enabled/
 
